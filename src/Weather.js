@@ -5,7 +5,10 @@ import { useState } from "react";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [weatherData, setWeatherData] = useState({
+    ready: false,
+  });
+
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
@@ -63,7 +66,9 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
+
         <WeatherInfo data={weatherData} />
+
         <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
